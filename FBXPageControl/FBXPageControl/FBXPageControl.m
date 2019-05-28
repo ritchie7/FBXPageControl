@@ -9,22 +9,6 @@
 #import "FBXPageControl.h"
 
 
-@implementation FBXPageControlConfig
-- (instancetype)init
-{
-    self = [super init];
-    if ( self ) {
-        [self initialize];
-    }
-    return self;
-}
-
-- (void)initialize{}
-@end
-
-@implementation FBXPageControlConfigNormal
-@end
-
 
 @interface FBXPageControl ()
 @property (nonatomic, strong) NSMutableArray<UIView *> *pool;
@@ -47,9 +31,9 @@
     _pool = [NSMutableArray array];
     self.backgroundColor = [UIColor clearColor];
     
-//    self.layer.cornerRadius
     _currentPage = 0;
     _numberOfPages = 0;
+    
     _controlSpacing = 10.f;
     _controlSize = CGSizeMake(5, 30);
     _currentControlSize = CGSizeMake(5, 50);
@@ -61,13 +45,14 @@
     _currentControlAlpha = 1.f;
     
     _anmationDuration = 1.f;
+    
     _pageIndicatorTintColor = [UIColor grayColor];
     _currentPageIndicatorTintColor = [UIColor redColor];
+    
     _colorTransition = NO;
     
     _style = FBXPageControlStyleNormal;
     _alignment = FBXPageControlAlignmentCenter;
-//    _config = [[FBXPageControlConfig alloc] init];
 }
 
 - (void)setNumberOfPages:(NSInteger)numberOfPages
@@ -80,8 +65,6 @@
     for (int i = 0; i < numberOfPages - tmp.count; i++) {
         
         UIView *control = [[UIView alloc] init];
-        
-        
         
         UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(clickAction:)];
         [control addGestureRecognizer:tapGesture];
@@ -99,11 +82,6 @@
     
     [self updateControls];
     
-    
-//    if ([self.delegate respondsToSelector:@selector(pageControl:controlViews:)] && _numberOfPages > 0)
-//    {
-//        [self.delegate pageControl:self controlViews:_pool];
-//    }
 }
 
 - (void)setCurrentPage:(NSInteger)currentPage
@@ -117,7 +95,6 @@
     
     if (_currentPage >= _pool.count || oldCurrentPage >= _pool.count) return;
     
-    NSLog(@"---------%li", currentPage);
     
     if (oldCurrentPage < _currentPage) { // ➡️
         for (NSInteger i = oldCurrentPage; i < _currentPage; i++) {
@@ -134,10 +111,6 @@
     {
         [self.delegate pageControl:self didSelectedControl:oldCurrentPage to:currentPage];
     }
-//    if ([self.delegate respondsToSelector:@selector(pageControl:didSelectedControl:to:controlViews:)])
-//    {
-//        [self.delegate pageControl:self didSelectedControl:oldCurrentPage to:currentPage controlViews:_pool];
-//    }
 }
 
 
@@ -189,16 +162,6 @@
     _style = style;
     if (style > FBXPageControlStyleMoved || style < FBXPageControlStyleNormal) _style = FBXPageControlStyleNormal;
 }
-
-- (void)setDelegate:(id<FBXPageControlDelegate>)delegate
-{
-    _delegate = delegate;
-//    if ([self.delegate respondsToSelector:@selector(pageControl:controlViews:)] && _numberOfPages > 0)
-//    {
-//        [self.delegate pageControl:self controlViews:_pool];
-//    }
-}
-
 
 - (void)updateControls
 {
@@ -314,7 +277,6 @@
         }];
         
     } else {
-//        NSTextAlignment
         toControl.backgroundColor = _currentPageIndicatorTintColor;
         fromControl.backgroundColor = _pageIndicatorTintColor;
     }
@@ -323,7 +285,6 @@
 
 - (void)clickAction:(UITapGestureRecognizer *)recognizer {
     
-//    return;
     UIView *control = recognizer.view;
     NSInteger page = [_pool indexOfObject:control];
     self.currentPage = page;

@@ -13,6 +13,7 @@
 		F9DBE1C0229D2A0F00C5ADA2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9DBE1BF229D2A0F00C5ADA2 /* Assets.xcassets */; };
 		F9DBE1C3229D2A0F00C5ADA2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9DBE1C1229D2A0F00C5ADA2 /* LaunchScreen.storyboard */; };
 		F9DBE1C6229D2A0F00C5ADA2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DBE1C5229D2A0F00C5ADA2 /* main.m */; };
+		F9DBE1CF229D2A7600C5ADA2 /* FBXPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = F9DBE1CE229D2A7600C5ADA2 /* FBXPageControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		F9DBE1C2229D2A0F00C5ADA2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9DBE1C4229D2A0F00C5ADA2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9DBE1C5229D2A0F00C5ADA2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F9DBE1CD229D2A7600C5ADA2 /* FBXPageControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBXPageControl.h; sourceTree = "<group>"; };
+		F9DBE1CE229D2A7600C5ADA2 /* FBXPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FBXPageControl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 		F9DBE1B5229D2A0E00C5ADA2 /* FBXPageControl */ = {
 			isa = PBXGroup;
 			children = (
+				F9DBE1CC229D2A3E00C5ADA2 /* FBXPageControl */,
 				F9DBE1B6229D2A0E00C5ADA2 /* AppDelegate.h */,
 				F9DBE1B7229D2A0E00C5ADA2 /* AppDelegate.m */,
 				F9DBE1B9229D2A0E00C5ADA2 /* ViewController.h */,
@@ -67,6 +71,15 @@
 				F9DBE1C1229D2A0F00C5ADA2 /* LaunchScreen.storyboard */,
 				F9DBE1C4229D2A0F00C5ADA2 /* Info.plist */,
 				F9DBE1C5229D2A0F00C5ADA2 /* main.m */,
+			);
+			path = FBXPageControl;
+			sourceTree = "<group>";
+		};
+		F9DBE1CC229D2A3E00C5ADA2 /* FBXPageControl */ = {
+			isa = PBXGroup;
+			children = (
+				F9DBE1CD229D2A7600C5ADA2 /* FBXPageControl.h */,
+				F9DBE1CE229D2A7600C5ADA2 /* FBXPageControl.m */,
 			);
 			path = FBXPageControl;
 			sourceTree = "<group>";
@@ -142,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9DBE1BB229D2A0E00C5ADA2 /* ViewController.m in Sources */,
+				F9DBE1CF229D2A7600C5ADA2 /* FBXPageControl.m in Sources */,
 				F9DBE1C6229D2A0F00C5ADA2 /* main.m in Sources */,
 				F9DBE1B8229D2A0E00C5ADA2 /* AppDelegate.m in Sources */,
 			);

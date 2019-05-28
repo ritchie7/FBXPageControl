@@ -10,12 +10,6 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FBXPageControlConfig : NSObject
-@end
-
-@interface FBXPageControlConfigNormal : FBXPageControlConfig
-
-@end
 
 @class FBXPageControl;
 typedef NS_ENUM(NSUInteger, FBXPageControlStyle) {
@@ -34,8 +28,6 @@ typedef NS_ENUM(NSUInteger, FBXPageControlAlignment) {
 @optional
 
 - (void)pageControl:(FBXPageControl *)pageControl didSelectedControl:(NSInteger)from to:(NSInteger)to; // when userinterface = YES.
-//- (void)pageControl:(FBXPageControl *)pageControl controlViews:(NSArray <UIView *> *)controlViews; // all controlViews.
-//- (void)pageControl:(FBXPageControl *)pageControl didSelectedControl:(NSInteger)from to:(NSInteger)to controlViews:(NSArray <UIView *> *)controlViews;
 @end
 
 @interface FBXPageControl : UIControl
@@ -59,8 +51,6 @@ typedef NS_ENUM(NSUInteger, FBXPageControlAlignment) {
 
 @property (nonatomic, assign) BOOL colorTransition;
 
-
-@property (nonatomic) FBXPageControlConfig *config;
 @property (nonatomic) FBXPageControlStyle style;
 @property (nonatomic) FBXPageControlAlignment alignment;
 
